@@ -128,7 +128,7 @@ function Form_info(){
                             render={(arrayHelpers) => (
                                 <div>
                                 {values.courses && values.courses.length > 0 ? (
-                                    values.courses.map((hobby, index) => (
+                                    values.courses.map((course, index) => (
                                     <div key={index}>
                                         <input name={`courses.${index}`} />
                                         <button

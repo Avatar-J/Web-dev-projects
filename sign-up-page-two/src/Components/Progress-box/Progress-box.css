@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center; 
+    margin-right: 0;
 }
 
  .box-progress .box-section{

@@ -1,5 +1,6 @@
 import React from "react";
-import "./Progress-box.css"
+import "./Progress-box.css";
+import StepProgressBar from "../StepProgressBar/StepProgressBar";
 
 
 function Progress_box(){
@@ -7,6 +8,8 @@ function Progress_box(){
 
     return(
         <div className="box-progress">
+
+            
 
             <div className="section">
 
