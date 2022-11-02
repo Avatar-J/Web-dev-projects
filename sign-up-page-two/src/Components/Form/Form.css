@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+.P-Container{
+    max-width: 70vw; 
+    padding: 40px 40px; 
+    /* background-color: hsl(0, 0%, 97%); */
+    background-color: #f1f2f4;
+    height: auto;
+    margin: 0 auto;
+    
+
+}
+.P-Container .Progress{
+    width: 60vw;
+    margin-top: 20px;
+}
+
+.P-Container .Form-det-container{
+    width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+.P-Container .section{
+    font-family: 'Nunito', sans-serif;
+}
+.P-Container label{
+    font-family: 'Nunito', sans-serif;
+}
+.P-Container input, select{
+    outline: none;
+    border-radius: 7px;
+    height: 35px;
+    background-color: transparent;
+
+}
+.P-Container .input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+/* 
+.Form-det-container{
+    margin-top: 100px;
+    display: grid;
+    place-content: center;
+    
+}
+
+.Form-Footer{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Form-Footer button{
+    background-color: #03A89E;
+    font-size: 1rem;
+    color: White;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    border: 2px solid white;
+    outline: none;
+    margin-top: 20px;
+}
+
+.Form-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Form-Section{
+    color: #03A89E;
+    font-size: 2rem;
+    align-items: center;
+} */
