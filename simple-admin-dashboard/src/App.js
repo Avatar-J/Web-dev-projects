@@ -1,11 +1,27 @@
 import Admin from "./AdminDashboard/Admin"
+import Header from "./Side-bar/Sidebar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
   return (
-    <div className="App">
-     <Admin/>
-    </div>
+    <>
+    <Router>
+
+      <Header/>
+
+       <Routes>
+         <Route path='/'/>
+       </Routes>
+
+    </Router>
+     
+    </>
   );
 }
 
