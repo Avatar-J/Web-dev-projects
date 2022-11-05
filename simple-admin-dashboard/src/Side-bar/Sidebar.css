@@ -39,6 +39,7 @@
 }
 .menu .active{
     transition: 350ms;
+    visibility: hidden;
 }
 .menu-text{
     display: flex;
