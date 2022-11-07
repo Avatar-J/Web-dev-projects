@@ -9,20 +9,20 @@ export const MenuData = [
         title: 'Home',
         path: '/',
         icon: <AiIcons.AiFillHome />,
-        className: 'menu-text'
+        clName: 'menu-text'
       },
 
       {
         title: 'Upload File',
         path: '/upload',
         icon: <FaIcons.FaFileUpload />,
-        className: 'menu-text'
+        clName: 'menu-text'
       },
 
       {
         title: 'Delete File',
         path: '/delete',
         icon: <AiIcons.AiFillDelete />,
-        className: 'menu-text'
+        clName: 'menu-text'
       },
 ]
