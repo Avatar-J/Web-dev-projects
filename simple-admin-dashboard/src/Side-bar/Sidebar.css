@@ -1,0 +1,71 @@
+ .Admin-dash{
+    position: relative;
+} 
+.Admin-header{
+    background-color: #e0bf29;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    
+   
+}
+
+.hamburger{
+    height: 100px;
+    line-height: 100px;
+    padding-left: 20px;
+    cursor: pointer;
+    display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 2rem;
+  font-size: 3rem;
+}
+
+.Admin-header h2{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40vw;
+}
+ .menu{
+    height: 100vh;
+    background-color: #e0bf29;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    transition: 850ms;
+}
+.menu .active{
+    transition: 350ms;
+    visibility: hidden;
+}
+.menu-text{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+.menu-text a{
+    text-decoration: none;
+    color: #5d4e0d;
+    font-size: 18px;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+
+}
+.menu-text ul{
+    width: 100%;
+}
+.menu-text li:hover{
+    background-color: white;
+    color: #29e0bf;
+}
+.menu span{
+   margin-left: 16px;
+}
