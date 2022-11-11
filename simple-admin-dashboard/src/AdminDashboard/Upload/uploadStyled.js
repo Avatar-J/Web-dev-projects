@@ -5,15 +5,19 @@ import Admin from "../../Images/up.svg"
 export const Container = styled.div`
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: row;
   background-image: url(${Admin});
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom right;
+
+  .overlay{
+    display: flex;
+  flex-direction: row;
+   background:rgba(333, 444, 331, 0.8);
+  }
 `
 export const Wrapper = styled.div`
-   margin-top: 30px;
+   margin: 30px auto 30px auto;
    width: 1200px;
    display: flex;
    flex-direction: column;
@@ -27,12 +31,35 @@ export const Wrapper = styled.div`
    }
 
 `
+export const NavBar = styled.nav`
+    position: absolute;
+    inset: 0 0 0 0;
+   height: 100px;
+   z-index: 1;
+   display: grid;
+   place-content: center;
+
+  
+   h1{
+    font-size: 4rem;
+    color: #FF652F;
+   }
+
+   @media (max-width: 700px){
+    h1{
+    font-size: 3rem;
+    
+   }
+    }
+   
+`
 export const InputContainer = styled.div`
     margin-bottom: 20px; 
     margin-bottom: 30px;
     display: grid;
     place-content: center;
 
+   
    
 `
 
@@ -47,6 +74,11 @@ export const InputField = styled.input`
   height: 28px;
   border: 2px solid rgba(0,0,0,0.5);
   text-align: center;
+
+  @media (max-width: 700px){
+    width: 250px;
+    }
+
 `
 export const InputSelect = styled.select`
     width: 500px;
@@ -57,6 +89,10 @@ export const InputSelect = styled.select`
   border: 2px solid rgba(0,0,0,0.5);
   text-align: center;
   background-color: white;
+
+  @media (max-width: 700px){
+    width: 250px;
+    }
 `
 export const InputFile = styled.input`
     background-color: #a9fdf8;
@@ -73,5 +109,9 @@ export const UploadButton = styled.button`
    &:hover{
     scale: 1.2;
    }
+
+   @media (max-width: 700px){
+    width: 200px;
+    }
 
 `

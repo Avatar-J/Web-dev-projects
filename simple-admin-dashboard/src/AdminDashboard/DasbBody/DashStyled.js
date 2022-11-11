@@ -6,13 +6,9 @@ export const AdminContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: row;
+    position: grid;
+    place-content: center;
     
-    .sidebar{
-            visibility: visible;
-    }
-    @media (max-width: 700px){
-        visibility: hidden;
-    }
     
 `
 export const Wrapper = styled.div`
@@ -24,37 +20,22 @@ export const Wrapper = styled.div`
     }
     
 `
-export const TopBar = styled.div`
-  height: 100px;
-  width: 100%;
- display: flex;
- flex-direction: row;
- justify-content: flex-start;
 
- .hamburger{
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
- h1{
-    margin-left: 70px;
-    position: absolute;
-    top: 0;
- }
-`
+
 export const SectionInfo = styled.div`
 
-margin-bottom: 20px;
+ margin-bottom: 20px;
  height: auto;
  display: grid;
- grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-columns: 1fr 1fr  1fr;
  gap: 20px;
+ margin-top: 100px;
 
  @media (max-width: 800px){
     display: grid;
     grid-template-columns: 1fr ;
+    place-content: center;
+
     }
    
  
@@ -74,6 +55,7 @@ export const BoxInfo = styled.div`
 
     @media (max-width: 1000px){
         height: 120px;
+        width: 80%;
     }
 
 `
@@ -84,7 +66,37 @@ export const SectionInfo2 = styled.div`
  grid-template-columns: 1fr 1fr;
  margin: 10px auto;
  gap: 20px;
+
+ @media (max-width: 1000px){
+    grid-template-columns: 1fr ;
+}
  
+`
+export const NavBar = styled.nav`
+    position: absolute;
+    inset: 0 0 0 0;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   
+
+   h1{
+    font-size: 4rem;
+    color: #FF652F;
+   }
+
+  
+   @media (max-width: 700px){
+
+
+    h1{
+    font-size: 2rem;
+    
+   }
+    }
+   
 `
 export const BoxInfo2 = styled.div`
 height: 300px;

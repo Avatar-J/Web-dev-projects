@@ -1,25 +1,115 @@
 import { Form, Formik } from 'formik';
+
 import * as yup from 'yup';
 import axios from '../axios';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Sidebar1 from '../../AdminDashboard/Sidebar/Sidebar1';
 import Logo from './../../Assets/Klogo.png';
 import { Avatar, StyledTitle, StyledSubTitle } from '../../Components/Style';
-import { Container, InputContainer, InputField, InputLabel, InputSelect, UploadButton, Wrapper } from './DeleteStyled';
+import { Container, InputContainer, InputField, InputLabel, InputSelect, UploadButton, Wrapper, NavBar } from './DeleteStyled';
 
 
 const Delete = () => {
+    const [course, setcourse] = useState([])
+    const [File, setFile] = useState({})
+
+    useEffect( ()=> {
+        function fetchData(){
+          axios.get("/admin/course")
+        .then(res => {
+          setcourse(res.data.map(o=> o.name).flat());
+        })
+        .catch((err)=> {
+          console.log(err)
+        })
+        }
+        fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+
+    const uploadHandler =  async (input) =>{
+        const formData = new FormData();
+        formData.append('filetoUpload', File);
+        formData.append('courseName', input.courseName)
+        formData.append('programme', input.programmeName)
+        formData.append('level', input.level)
+        formData.append('semester', input.semester)
+  
+        await axios.post("/admin/upload", formData)          
+          .then((res)=>{
+            console.log(res)
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
+        }
+
+    const slides = [
+        "Lecture One","Lecture Two","Lecture Three","Lecture Four","Lecture Five","Lecture Six","Lecture Seven","Lecture Eight","Lecture Nine","Lecture Ten","Lecture Eleven","Lecture Twelve","Lecture Thirteen","Lecture Fourteen","Lecture Fifteen","Lecture Sixteen","Lecture Seventeen","Lecture Eighteen","Lecture Nineteen","Lecture Twenty"
+        ]
+
+    
+ 
 
     return(
 
         <Container>
+            <div className='overlay'>
 
-            <Sidebar1/>
+            <Sidebar1 />
+
+            <NavBar>
+                
+                <h1>
+                Delete File
+                </h1>
+               
+            </NavBar>
 
             <Wrapper>
+                
+
+                
 
 
-                <Formik>
+                <Formik
+                    initialValues={{
+                        courseName:"",
+                        programmeName: "",
+                        level:"",
+                        semester:"",
+                        filetoUpload: ""
+                     }}
+                                validationSchema={
+                                yup.object().shape({
+                                    courseName: yup.string()
+                                    .required("Enter the courseName")
+                                    .oneOf(course, "Invalid course"),
+                                    programmeName: yup.string()
+                                    .required("Select the Programme")
+                                    .oneOf(["Agricultural Engineering", "Chemical Engineering", "Civil Engineering", "Geomatic Engineering", "Materials Engineering", "Mechanical Engineering", "Electrical Engineering", "Computer Engineering", "Aerospace Engineering", "Petroleum Engineering", "Telecom Engineering", "Geological Engineering", "Biomedical Engineering", "Petrochemical Engineering", "Metallurgical Engineering"], "Select the Programme"),
+                                    semester: yup.string()
+                                    .required("Select the Semester")
+                                    .oneOf(["First Semester","Second Semester"],"Select the Semester"),
+                                    level : yup.string()
+                                    .required("Select the Year")
+                                    .oneOf(["First Year","Second Year","Third Year","Fourth Year"],"Select the Year"),
+                                    filetoUpload: yup.mixed()
+                                    .required("You need to provide a file")
+                                    .test("fileFormat", "Unsupported Format", (value) => {
+                                        setFile(value)
+                                        return value && (value.name.slice(-3) === "pdf" ||  value.name.slice(-3) === "ppt" || value.name.slice(-4) === "pptx")
+                                    })
+                                    .test("fileFormat", "Invalid document name", (value) => {
+                                        setFile(value)
+                                        return value && (slides.includes(value.name.slice(0,-4))  || slides.includes(value.name.slice(0,-5)))
+                                    })
+                                    
+                                    })
+                                }
+                                onSubmit={uploadHandler}
+                >
 
                 {({isSubmitting})=>(
                     <Form>
@@ -118,9 +208,11 @@ const Delete = () => {
 
 
                 </Formik>
+
+                
             </Wrapper>
 
-
+            </div>
 
         </Container>
     )
