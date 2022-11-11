@@ -1,32 +1,15 @@
 import React from "react";
-import { HeaderContainer, HeaderButton, HeaderLeft, HeaderRight,BodyContainer,Image, BodyWrapper, BodyCard,  CardLeft, CardRight } from "./Styling";
-import Tutorimg from "../Images/Profiling.svg"
-import ProfileCard from "../Profile-Card/ProfileCard";
+import { BodyContainer, BodyWrapper, BodyCard,  CardLeft, CardRight } from "./Styled";
+
+import Man from "../Images/man1.png"
 import Female from "../Images/female.png"
 import { Data } from "../Data";
 
 
-function Tutor(){
+function ProfileCard(){
 
     return(
-        <>
-        <HeaderContainer>
-            <HeaderLeft>
-                <h1>Hello there, you can sign up to be a tutor</h1>
-                <HeaderButton>
-                    Sign Up
-                </HeaderButton>
-                
-            </HeaderLeft>
-
-            <HeaderRight>
-                
-            </HeaderRight>
-            
-
-        </HeaderContainer>
-
-         <BodyContainer>
+        <BodyContainer>
 
             <BodyWrapper>
 
@@ -37,10 +20,10 @@ function Tutor(){
                         <CardLeft>
 
                                 
-                                    <Image>
+                                    <div className="deco">
                                        
-                                         {/* <img src={Female} />  */}
-                                    </Image>
+                                         <img src={Female} /> 
+                                    </div>
                                 
     
                                 
@@ -85,9 +68,7 @@ function Tutor(){
 
 
         </BodyContainer>
-
-        </>
     )
 }
 
-export default Tutor;
+export default ProfileCard;

@@ -6,14 +6,16 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Sidebar1 from "./Side-bar/Sidebar1";
-import AdminBody from "./Side-bar/AdminBody";
+import Sidebar1 from "./AdminDashboard/Sidebar/Sidebar1";
+import AdminBody from "./AdminDashboard/DasbBody/DashBody";
+import Upload from "./AdminDashboard/Upload/Upload";
+import Delete from "./AdminDashboard/Delete/DeleteFile";
 
 
 function App() {
   return (
     <>
-      <AdminBody/>
+      <Delete/>
     {/* <Router>
 
       <AdminBody/>
