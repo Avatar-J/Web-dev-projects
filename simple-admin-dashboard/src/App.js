@@ -1,35 +1,22 @@
-// import Admin from "./AdminDashboard/Admin"
-// import Header from "./Side-bar/Sidebar";
 import {
   BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
 } from "react-router-dom";
-import DashBoard from "./AdminDashboard/DasbBody/DashBody";
-import Upload from "./AdminDashboard/Upload/Upload";
-import Delete from "./AdminDashboard/Delete/DeleteFile";
-
+import { AuthProvider } from "./hooks/useAuth";
+import ProtectedRoutes from "./utils/ProtectedRoutes";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+// import Sidebar from "./AdminDashboard/NewSidebar/Sidebar"
 
 function App() {
   return (
     <>
-      
-     <Router>
+      <AuthProvider>
+        <Router>
+          <ProtectedRoutes />
+        </Router>
+      </AuthProvider>
 
-      
+      {/* <Sidebar/> */}
 
-       <Routes>
-
-            <Route path='/' element={<DashBoard/>}/>
-            <Route path='upload' element={<Upload/>}/>
-            <Route path='delete' element={<Delete/>}/>
-            
-
-       </Routes>
-
-    </Router> 
-     
     </>
   );
 }

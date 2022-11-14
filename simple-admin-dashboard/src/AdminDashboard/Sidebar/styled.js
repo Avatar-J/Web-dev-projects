@@ -6,12 +6,60 @@ import { Link } from "react-router-dom";
 export const SidebarBox = styled.div`
    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 
-    width: 300px;
+    /* width: 70px; */
     background-color: #1f2833;
-    height: 100vh;
+    min-height: 100vh;
+    margin-right: 10px;
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
-    transition: all 0.5s;
+    transition: all 300ms ease;
+    width: 250px;
+    /* position: fixed; */
+
+    /* @media (max-width: 1000px){
+        width: 70px !important;
+    } */
+
+     .bars{
+    /* display: none; */
+    width: 40px;
+    background: #ff652f;
+    color: #1f2833;
+    border-radius: 10px;
+    padding:10px;
+    
+  }
+
+  @media (max-width: 768px) {
+    
+      position: fixed;
+      z-index: 9;
+      background: #1f2833;
+      width: 300px;
+      padding-right: 1rem;
+      height: 100%;
+    }
+
+    /* .bars{
+      display: flex;
+      position: fixed;
+      top: 2rem;
+      left:60%;
+      background: #ff652f;
+      padding:10px;
+      border-radius: 10px;
+      z-index: 9;
+      color: #1f2833;
+    } */
+    /* @media screen and (max-width:500px){
+        min-height:0;
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    } */
 `
 export const NavBar = styled.nav`
 
@@ -47,18 +95,37 @@ export const SidebarProfileIcon = styled.div`
 `
 export const SidebarMenu = styled.div`
     
-    position: relative;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
+    /* @media screen and (max-width:500px){
+        flex-direction: row;
+        
+    } */
     .icon{
-        width: 60px;
+        /* font-size: 20px; */
+        /* width: 60px; */
+        /* padding-right:10px; */
         
     }
 
-    .icon, .title{
+   /* .title{
         font-size: 20px;
        
     }
-  
+
+    @media (max-width: 1200px) {
+    .title{
+      display: none;
+    }
+    @media (max-width: 768px) {
+        display: block;
+    }
+   
+  }
+   */
     
    
 `
@@ -67,11 +134,33 @@ export const NavLink = styled(Link)`
      color: #ff652f;
      margin-top: 30px;
     display: flex;
-    padding: 10px 15px;
-    gap: 15px;
-    transition: all 0.5s;
+    padding: 5px 5px;
+    /* gap: 2px; */
+    /* transition: all 0.5s; */
     cursor: pointer;
     text-decoration: none;
+    transition: all 300ms ease;
+
+    .icon{
+        font-size: 20px; 
+         width: 60px; 
+         height: 60px;
+         line-height: 60px;
+         padding-right:10px; 
+        
+    }
+
+   .title{
+        
+        height: 50px;
+        line-height: 70px;
+       
+    } 
+
+    @media screen and (max-width:500px){
+        padding-right: 50px;
+        
+    }
     
     &:hover{
       color: #ff652f;

@@ -11,14 +11,21 @@ export const Container = styled.div`
   background-position: bottom right;
 
   .overlay{
-    display: flex;
+  display: flex;
   flex-direction: row;
    background:rgba(333, 444, 331, 0.8);
+
+   @media screen and (max-width:500px){
+       flex-direction: column;
+        
+    }
   }
+
+  
 `
 export const Wrapper = styled.div`
-   margin: 30px auto 30px auto;
-   width: 1200px;
+   margin: 20px auto 20px auto;
+    /* width: 1200px; */
    display: flex;
    flex-direction: column;
    display: grid;
@@ -33,11 +40,22 @@ export const Wrapper = styled.div`
 `
 export const NavBar = styled.nav`
     position: absolute;
-    inset: 0 0 0 0;
+    /* inset: 0 0 0 0; */
    height: 100px;
    z-index: 1;
    display: grid;
-   place-content: center;
+   grid-template-columns: 1fr 1fr;
+
+   .hamburger{
+     line-height: 100px;
+     font-size: 2rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #ff652f;
+     margin-left: 7px;
+     margin-top: 7px;
+   }
 
   
    h1{
@@ -73,7 +91,7 @@ export const InputField = styled.input`
   outline: none;
   height: 28px;
   border: 2px solid rgba(0,0,0,0.5);
-  text-align: center;
+  /* text-align: center; */
 
   @media (max-width: 700px){
     width: 250px;
@@ -85,7 +103,7 @@ export const InputSelect = styled.select`
   border-radius: 10px;
   border: none;
   outline: none;
-  height: 28px;
+  height: 34px;
   border: 2px solid rgba(0,0,0,0.5);
   text-align: center;
   background-color: white;
